@@ -1,15 +1,10 @@
 <template>
-  <div class="layout">
+  <div id="app">
     <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
+      <TheNavBar/>
     </header>
-    <slot/>
+    <main class="site-content"><slot/></main>
+    <TheFooter/>
   </div>
 </template>
 
@@ -21,30 +16,61 @@ query {
 }
 </static-query>
 
-<style>
+<script>
+  import TheNavBar from "@/components/layout/TheNavBar/TheNavBar";
+  import TheFooter from "@/components/layout/TheFooter/TheFooter";
+  export default {
+    components: {
+      TheNavBar,
+      TheFooter
+    },
+  }
+</script>
+
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500&display=swap');
+// Import Bulma's core
+@import "../../node_modules/bulma/sass/utilities/_all";
+// Misc Variables
+$tablet: 750px;
+// Set your colors
+$primary: #00796b;
+$primary-invert: findColorInvert($primary);
+$twitter: #80bcb5;
+$twitter-invert: findColorInvert($twitter);
+// Links
+$link: #26a69a;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert),
+    "twitter": ($twitter, $twitter-invert),
+    "link": ($link, $link-invert)
+);
+// Import Bulma and Buefy styles
+@import "../../node_modules/bulma";
+@import "../../node_modules/buefy/src/scss/buefy";
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 400;
 }
-
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
+// Below code is for sticky footer
+#app {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
+  min-height: 100vh;
+  flex-direction: column;
 }
-
-.nav__link {
-  margin-left: 20px;
+.site-content {
+  flex: 1;
 }
+// end sticky footer code
 </style>
