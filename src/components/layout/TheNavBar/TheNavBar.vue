@@ -46,7 +46,7 @@
                 size="is-small"
                 class="is-link"
               >
-                CONTACT US
+                CONTACT
               </b-button>
             </g-link>
           </div>

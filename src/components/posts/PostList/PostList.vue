@@ -1,14 +1,14 @@
 <template>
   <section class="section" id="foods">
     <div class="container">
-      <h1 class="title is-size-4 has-text-primary">Our Foods</h1>
+      <h1 class="title is-size-4 has-text-primary">Recent Posts</h1>
       <div class="columns is-multiline">
         <div
-          v-for="food in $static.foods.edges"
-          :key="food.node.id"
+          v-for="post in $static.posts.edges"
+          :key="post.node.id"
           class="column is-4"
         >
-          Test
+          <PostCard :post="post"/>
         </div>
       </div>
     </div>
@@ -22,9 +22,8 @@ query Post {
       node {
         id,
         title,
-        slug,
-        image,
-        ingredients
+        excerpt,
+        date
       }
     }
   }
@@ -32,8 +31,11 @@ query Post {
 </static-query>
 
 <script>
+import PostCard from './components/PostCard'
+
 export default {
   components: {
+    PostCard
   },
 }
 </script>

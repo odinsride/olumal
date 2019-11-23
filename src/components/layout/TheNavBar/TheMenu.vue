@@ -22,17 +22,13 @@ export default {
         target: '#blog'
       },
       {
-        name: 'Projects',
-        target: '#projects'
+        name: 'Recipes',
+        target: '#recipes'
       },
       {
-        name: 'Skills',
-        target: '#skills',
-      },
-      {
-        name: 'Photography',
-        target: '#photography'
-      },
+        name: 'Travel',
+        target: '#travel',
+      }
     ]
   })
 }
