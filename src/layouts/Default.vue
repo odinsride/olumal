@@ -28,7 +28,7 @@ query {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,500i,700,700i&display=swap');
 // Import Bulma's core
 @import "../../node_modules/bulma/sass/utilities/_all";
 // Misc Variables
@@ -60,7 +60,7 @@ $colors: (
 @import "../../node_modules/bulma";
 @import "../../node_modules/buefy/src/scss/buefy";
 body {
-  font-family: 'Raleway', sans-serif !important;
+  font-family: 'Muli', sans-serif !important;
   font-weight: 400;
 }
 // Below code is for sticky footer

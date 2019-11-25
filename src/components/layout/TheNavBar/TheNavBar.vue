@@ -1,9 +1,8 @@
 <template>
-  <nav class="navbar is-spaced" role="navigation" aria-label="main-navigation">
+  <nav class="navbar has-shadow is-spaced" role="navigation" aria-label="main-navigation">
     <div class="navbar-brand">
       <g-link to="/" class="navbar-item logo">
-        <!--<img src="@/assets/logo.png" alt="baked. ...an olumal company." />-->
-        olumal
+        <img src="@/assets/logo.png" alt="olumal Logo" />
       </g-link>
       <a
         :class="{ 'is-active': menuActive }"
@@ -77,7 +76,7 @@ export default {
   padding-top: 0;
   padding-bottom: 0;
   img {
-    max-height: 4.0rem;
+    max-height: 3.0rem;
   }
 }
 </style>
