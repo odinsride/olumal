@@ -2,7 +2,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faPaperPlane,
   faInfoCircle,
-  faGlobe
+  faGlobe,
+  faLongArrowAltRight
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faInstagram
@@ -18,7 +19,8 @@ export default function (Vue, { router, head, isClient }) {
     faPaperPlane,
     faInfoCircle,
     faGlobe,
-    faInstagram
+    faInstagram,
+    faLongArrowAltRight
   )
 
   Vue.use(Buefy, {

@@ -41,15 +41,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.title {
-  font-weight: 500;
-  margin-bottom: 1.5em;
-}
-.columns {
-  flex-wrap: wrap;
-  align-items: stretch;
-}
-.column {
-  display: flex;
-}
 </style>

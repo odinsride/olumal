@@ -1,6 +1,6 @@
 <template>
     <article>
-        <h1 class="title is-3">{{ post.node.title }}</h1>
+        <h1 class="title is-3 has-text-link">{{ post.node.title }}</h1>
         <nav class="level">
             <div class="level-left">
                 <div class="level-item">
@@ -17,6 +17,12 @@
         </nav>
         <div class="content">
             <p>{{ post.node.excerpt }}</p>
+            <p class="has-text-right">
+              <b-button type="is-white is-rounded has-text-link"
+                icon-right="long-arrow-alt-right">
+                Continue Reading
+              </b-button>
+            </p>
         </div>
     </article>
 </template>

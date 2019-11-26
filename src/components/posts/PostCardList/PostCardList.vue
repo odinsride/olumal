@@ -1,5 +1,5 @@
 <template>
-  <section class="section" id="foods">
+  <section class="section" id="posts">
     <div class="container">
       <h1 class="title is-size-4 has-text-primary">Recent Posts</h1>
       <div class="columns is-multiline">
