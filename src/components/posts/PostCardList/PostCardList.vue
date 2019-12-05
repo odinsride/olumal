@@ -1,7 +1,26 @@
 <template>
   <section class="section" id="posts">
     <div class="container">
-      <h1 class="title is-size-4 has-text-primary">Recent Posts</h1>
+      <nav class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <p class="title is-size-4 has-text-primary">Recent Posts</p>
+          </div>
+          <div class="level-item">
+            <p class="has-text-right">
+              <g-link to="/blog">
+                <b-button type="is-white is-rounded has-text-link"
+                  icon-right="long-arrow-alt-right">
+                  Go to blog
+                </b-button>
+              </g-link>
+            </p>
+          </div>
+        </div>
+        <div class="level-right">
+          
+        </div>
+      </nav>
       <div class="columns is-multiline">
         <div
           v-for="post in $static.posts.edges"
