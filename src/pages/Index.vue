@@ -9,7 +9,7 @@
 <script>
 import TheHero from '@/components/pages/Index/TheHero'
 import About from '@/components/pages/Index/TheAbout'
-import PostCardList from '@/components/posts/PostCardList/PostCardList'
+import PostCardList from '@/components/pages/Index/ThePostCardList/ThePostCardList'
 export default {
   components: {
     TheHero,

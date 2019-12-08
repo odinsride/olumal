@@ -11,7 +11,10 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import * as formatDate from '~/helpers/formatDate.js'
+
 import Buefy from 'buefy';
+import '~/assets/styles/index.scss';
+
 import DefaultLayout from '~/layouts/Default.vue'
 
 export default function (Vue, { router, head, isClient }) {

@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import PostList from '@/components/posts/PostList/PostList'
-import RecentPostList from '@/components/posts/RecentPostList/RecentPostList'
+import PostList from '@/components/posts/PostList'
+import RecentPostList from '@/components/posts/RecentPostList'
 
 export default {
   components: {
@@ -35,5 +35,6 @@ export default {
 <style lang="scss" scoped>
 .title {
   margin-bottom: -10px;
+  margin-left: 20px;
 }
 </style>

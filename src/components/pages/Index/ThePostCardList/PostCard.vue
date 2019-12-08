@@ -3,7 +3,7 @@
         <div class="card-image">
             <figure class="image">
                 <g-image v-if="post.node.image" :src="post.node.image" />
-                <g-image v-else src="@/assets/olu-placeholder.png" />
+                <g-image v-else src="@/assets/images/olu-placeholder.png" />
             </figure>
             <div class="card-content om-card-content">
                 <div class="media">

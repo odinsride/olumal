@@ -2,7 +2,7 @@
   <nav class="navbar has-shadow is-spaced" role="navigation" aria-label="main-navigation">
     <div class="navbar-brand">
       <g-link to="/" class="navbar-item logo">
-        <img src="@/assets/logo.png" alt="olumal Logo" />
+        <img src="@/assets/images/logo.png" alt="olumal Logo" />
       </g-link>
       <a
         :class="{ 'is-active': menuActive }"
@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import TheMenu from "@/components/layout/TheNavBar/TheMenu";
+import TheMenu from "@/components/layout/TheMenu";
 
 export default {
     name: 'TheNavBar',

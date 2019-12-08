@@ -7,7 +7,7 @@
           :key="post.node.id"
           class="column is-12"
         >
-          <PostPanel :post="post"/>
+          <PostPanel :post="post.node"/>
         </div>
       </div>
     </div>
@@ -15,15 +15,22 @@
 </template>
 
 <static-query>
-query Post {
+{
   posts: allPost(sortBy: "date", order: DESC) {
     edges {
       node {
-        id,
-        title,
-        excerpt,
-        author,
+        id
+        title
+        author
+        category
+        path
         date
+        excerpt
+        ... on Post {
+          id
+          title
+          path
+        }
       }
     }
   }
@@ -31,7 +38,7 @@ query Post {
 </static-query>
 
 <script>
-import PostPanel from './components/PostPanel'
+import PostPanel from '@/components/posts/PostPanel'
 
 export default {
   components: {

@@ -17,6 +17,9 @@ module.exports = {
       options: {
         path: 'posts/**/*.md',
         typeName: 'Post',
+        refs: {
+          category: 'Category',
+        },
         remark: {
           plugins: [
             // ...local plugins
