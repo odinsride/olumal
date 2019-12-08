@@ -21,7 +21,9 @@ query Post($path: String!) {
     date
     excerpt
     content
-    category
+    category {
+        name
+    }
     author
   }
 }

@@ -22,7 +22,9 @@
         id
         title
         author
-        category
+        category {
+          name
+        }
         path
         date
         excerpt
