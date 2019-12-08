@@ -1,20 +1,20 @@
 <template>
   <Layout>
     <TheHero/>
-    <PostList/>
     <About/>
+    <PostCardList/>
   </Layout>
 </template>
 
 <script>
 import TheHero from '@/components/pages/Index/TheHero'
 import About from '@/components/pages/Index/TheAbout'
-import PostList from '@/components/posts/PostList/PostList'
+import PostCardList from '@/components/pages/Index/ThePostCardList/ThePostCardList'
 export default {
   components: {
     TheHero,
     About,
-    PostList
+    PostCardList
   },
   metaInfo: {
     title: 'Home'
@@ -23,7 +23,4 @@ export default {
 </script>
 
 <style>
-.home-links a {
-  margin-right: 1rem;
-}
 </style>

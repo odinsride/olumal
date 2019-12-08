@@ -1,14 +1,13 @@
 <template>
   <section class="section" id="foods">
     <div class="container">
-      <h1 class="title is-size-4 has-text-primary">Recent Posts</h1>
       <div class="columns is-multiline">
         <div
           v-for="post in $static.posts.edges"
           :key="post.node.id"
-          class="column is-4"
+          class="column is-12"
         >
-          <PostCard :post="post"/>
+          <PostPanel :post="post.node"/>
         </div>
       </div>
     </div>
@@ -16,14 +15,24 @@
 </template>
 
 <static-query>
-query Post {
-  posts: allPost(sortBy: "order", order: ASC) {
+{
+  posts: allPost(sortBy: "date", order: DESC) {
     edges {
       node {
-        id,
-        title,
-        excerpt,
+        id
+        title
+        author
+        category {
+          name
+        }
+        path
         date
+        excerpt
+        ... on Post {
+          id
+          title
+          path
+        }
       }
     }
   }
@@ -31,24 +40,14 @@ query Post {
 </static-query>
 
 <script>
-import PostCard from './components/PostCard'
+import PostPanel from '@/components/posts/PostPanel'
 
 export default {
   components: {
-    PostCard
+    PostPanel
   },
 }
 </script>
 
 <style scoped lang="scss">
-.title {
-  font-weight: 500;
-}
-.columns {
-  flex-wrap: wrap;
-  align-items: stretch;
-}
-.column {
-  display: flex;
-}
 </style>

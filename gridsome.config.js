@@ -17,6 +17,21 @@ module.exports = {
       options: {
         path: 'posts/**/*.md',
         typeName: 'Post',
+        refs: {
+          category: 'Category',
+        },
+        remark: {
+          plugins: [
+            // ...local plugins
+          ]
+        }
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'categories/**/*.md',
+        typeName: 'Category',
         remark: {
           plugins: [
             // ...local plugins

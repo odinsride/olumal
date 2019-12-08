@@ -1,7 +1,7 @@
 <template>
   <div class="navbar-start">
     <template v-for="(menuItem, index) in menuItems">
-      <a class="navbar-item" :key="index">
+      <a class="navbar-item has-text-link" :key="index">
         {{ menuItem.name }}
       </a>
     </template>
@@ -22,12 +22,16 @@ export default {
         target: '#blog'
       },
       {
-        name: 'Recipes',
+        name: 'My Recipes',
         target: '#recipes'
       },
       {
-        name: 'Travel',
+        name: 'My Travels',
         target: '#travel',
+      },
+      {
+        name: 'Fashion is Style',
+        target: '#fashion',
       }
     ]
   })
@@ -36,9 +40,9 @@ export default {
 
 <style scoped>
 a.navbar-item {
-  text-transform: uppercase;
-  font-size: 0.9em;
-  font-family: 'Raleway', sans-serif !important;
-  font-weight: 300;
+  /* text-transform: uppercase; */
+  font-size: 1.1em;
+  font-family: 'Muli', sans-serif !important;
+  font-weight: 700;
 }
 </style>

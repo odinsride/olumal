@@ -4,7 +4,7 @@ backend:
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
-
+site_url: https://www.olumal.com
 collections:
   - name: "posts"
     label: "Posts"
@@ -12,7 +12,21 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
+      - {label: "ID", name: "id", widget: "id"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "relation", collection: "categories", searchFields: ["name"], displayFields: ["name"], valueField: "id", multiple: true}
+      - {label: "Author", name: "author", widget: "string", default: "Malintha Custer"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
       - {label: "Excerpt", name: "excerpt", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "categories"
+    label: "Categories"
+    folder: "categories"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - {label: "ID", name: "id", widget: "id"}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Description", name: "description", widget: "markdown"}
