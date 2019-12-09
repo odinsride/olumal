@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+    <Layout>
         <section class="section" id="post">
             <div class="container">
                 <div class="columns">
@@ -10,7 +10,7 @@
                 </div>
             </div>
         </section>
-  </Layout>
+    </Layout>
 </template>
 
 <page-query>
@@ -21,8 +21,9 @@ query Post($path: String!) {
     date
     excerpt
     content
-    category {
-        name
+    tags {
+        id
+        title
     }
     author
   }

@@ -1,9 +1,9 @@
 <template>
   <div class="navbar-start">
     <template v-for="(menuItem, index) in menuItems">
-      <a class="navbar-item has-text-link" :key="index">
+      <g-link :to="menuItem.target" class="navbar-item has-text-link" :key="index">
         {{ menuItem.name }}
-      </a>
+      </g-link>
     </template>
   </div>
 </template>
@@ -15,23 +15,11 @@ export default {
     menuItems: [
       {
         name: 'Home',
-        target: '#top'
+        target: '/'
       },
       {
         name: 'Blog',
-        target: '#blog'
-      },
-      {
-        name: 'My Recipes',
-        target: '#recipes'
-      },
-      {
-        name: 'My Travels',
-        target: '#travel',
-      },
-      {
-        name: 'Fashion is Style',
-        target: '#fashion',
+        target: '/blog'
       }
     ]
   })

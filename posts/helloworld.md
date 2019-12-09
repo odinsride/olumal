@@ -1,8 +1,7 @@
 ---
 id: 32de0892-03f8-4eef-98d6-6b15e42e3fd7
 title: Hello World
-category:
-  - Travel
+tags: ["Travel"]
 author: M.
 date: 2019-11-23T16:18:58.642Z
 excerpt: >-

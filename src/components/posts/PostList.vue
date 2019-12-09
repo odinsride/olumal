@@ -15,24 +15,20 @@
 </template>
 
 <static-query>
-{
+query Posts {
   posts: allPost(sortBy: "date", order: DESC) {
     edges {
       node {
         id
         title
         author
-        category {
-          name
+        tags {
+          id
+          title
         }
         path
         date
         excerpt
-        ... on Post {
-          id
-          title
-          path
-        }
       }
     }
   }

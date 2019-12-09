@@ -14,8 +14,8 @@
                     </p>
                 </div>
                 <div class="level-item">
-                    <p class="subtitle is-6">
-                        <span class="has-text-weight-bold">Category:</span> {{ post.category }}
+                    <p class="subtitle is-6" v-for="tag in post.tags" :key=" tag.id" >
+                        <span class="has-text-weight-bold">Category:</span> {{ tag.title }}
                     </p>
                 </div>
             </div>
