@@ -5,7 +5,9 @@
                 <div class="columns">
                     <div class="column is-10 is-offset-1">
                         <PostMeta :post="$page.post" />
-                        <p v-html="$page.post.content" />
+                        <div class="content">
+                            <p v-html="$page.post.content" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,6 +42,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+span .icon {
+    display: none;
+}
 
 </style>
