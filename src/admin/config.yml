@@ -8,7 +8,7 @@ site_url: https://www.olumal.com
 collections:
   - name: "posts"
     label: "Posts"
-    folder: "posts"
+    folder: "content/posts"
     create: true
     slug: "{{slug}}"
     fields:
@@ -19,7 +19,7 @@ collections:
       - {label: "Featured Image", name: "image", widget: "image", required: false}
       - {label: "Excerpt", name: "excerpt", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Category"
-        name: "tags"
-        widget: "select"
-        options: ["Travel", "Food", "Fashion"]
+      - {label: "Category",
+          name: "tags",
+        widget: "select",
+       options: ["Travel", "Food", "Fashion"]}

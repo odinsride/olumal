@@ -1,17 +1,13 @@
 <template>
-  <section class="section" id="foods">
-    <div class="container">
       <div class="columns is-multiline">
         <div
-          v-for="post in $static.posts.edges"
+          v-for="post in filteredPosts"
           :key="post.node.id"
           class="column is-12"
         >
           <PostPanel :post="post.node"/>
         </div>
       </div>
-    </div>
-  </section>
 </template>
 
 <static-query>
@@ -36,14 +32,29 @@ query Posts {
 </static-query>
 
 <script>
-import PostPanel from '@/components/posts/PostPanel'
+import PostPanel from './PostPanel'
 
 export default {
   components: {
     PostPanel
   },
+
+  props: {
+    filter: {
+      type: String,
+      required: true
+    }
+  },
+  
+  computed: {
+    filteredPosts () {
+      return this.$static.posts.edges.filter(edge => {
+        return this.filter === 'All' ? edge : edge.node.tags.some(e => e.title === this.filter)
+      })
+    }
+  }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 </style>
