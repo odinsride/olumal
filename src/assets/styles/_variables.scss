@@ -1,14 +1,15 @@
 // Misc Variables
 $tablet: 750px;
 
-// Set colors colors
+// Set colors
 $primary: #00796b;
 $primary-invert: findColorInvert($primary);
 $twitter: #80bcb5;
 $twitter-invert: findColorInvert($twitter);
 
 // Links
-$link: #26a69a;
+// $link: #26a69a;
+$link: #228b81;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
@@ -26,3 +27,7 @@ $colors: (
     "twitter": ($twitter, $twitter-invert),
     "link": ($link, $link-invert)
 );
+
+$body-background-color: $light;
+
+$card-content-padding: 2.5em;

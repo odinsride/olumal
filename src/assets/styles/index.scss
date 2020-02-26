@@ -1,15 +1,15 @@
-/** Import Fonts */
-@import "fonts";
-
-// Import Bulma's core
+// Bulma Core
 @import "~bulma/sass/utilities/_all";
 
-/** Import the Bulma variables */
+// Bulma Variables
 @import "variables";
 
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 
-/** Import overrides */
+// Import Bulma-Divider
+@import "bulma-divider";
+
+// Overrides
 @import "overrides";
