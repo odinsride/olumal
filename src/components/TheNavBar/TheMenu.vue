@@ -1,9 +1,21 @@
 <template>
   <div class="navbar-start">
     <template v-for="(menuItem, index) in menuItems">
-      <a class="navbar-item has-text-primary" :key="index" :href="menuItem.target">
-        {{ menuItem.name }}
-      </a>
+      <b-navbar-item 
+        class="has-text-primary" 
+        :key="index" 
+        :href="menuItem.href" 
+        :target="menuItem.target ? menuItem.target : '_self'"
+      >
+        <b-button 
+          type="is-text has-text-primary has-text-weight-medium" 
+          :class="setActiveClass(menuItem.href, currentRoute)" 
+          role="button" size="" 
+          :icon-right="menuItem.icon ? menuItem.icon : ''" rounded
+        >
+          {{menuItem.name}}
+        </b-button>
+      </b-navbar-item>
     </template>
   </div>
 </template>
@@ -35,13 +47,32 @@ export default {
       //   target: '#photography'
       // },
     ]
-  })
+  }),
+
+  computed: {
+    currentRoute() {
+      return this.$route.path;
+    }
+  },
+  
+  methods: {
+    setActiveClass (href, curr) {
+      return href == curr ? 'is-active' : ''
+    }
+  }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 a.navbar-item {
-  font-weight: 600;
-  text-shadow: 0px 1px 1px #c9c9c9;
+  .button {
+    text-decoration: none;
+    //text-transform: uppercase;
+  }
+
+  .is-active {
+    text-decoration: underline;
+    background-color: inherit;
+  }
 }
 </style>
